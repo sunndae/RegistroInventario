@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Inventario</title>
+    <style>
+        body {
+            background-image: url('https://th.bing.com/th/id/R.578721cdf0e37ed129a198d27f5f309f?rik=G2%2boccJtMIF2nQ&pid=ImgRaw&r=0');
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+        }
+
+        /* Cambia el color del texto de las etiquetas label a negro */
+        label {
+            color: black;
+        }
+
+        input[type="text"], input[type="number"], input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            color: black; /* Cambia el color del texto a negro */
+        }
+
+        /* Estilo para el contenedor de campos con fondo blanco y bordes curvos */
+        .field-container {
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px; /* Bordes curvos */
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            margin: 20px auto 10px; /* Centra el botón horizontalmente y agrega espacio arriba y abajo */
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+
+        /* Agrega margen superior al segundo contenedor para crear un espacio */
+        .field-container:last-child {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registro de Inventario</h1>
+        <form id="inventoryForm">
+            <!-- Contenedor con fondo blanco y bordes curvos para Sabor, Precio y Fecha de vencimiento -->
+            <div class="field-container">
+                <!-- Cambia el color del texto de las etiquetas label a negro -->
+                <label for="flavor">Sabor:</label>
+                <input type="text" id="flavor" name="flavor" required>
+                <label for="price">Precio:</label>
+                <input type="number" id="price" name="price" min="0" step="0.01" required>
+                <!-- Cambia la fecha de vencimiento a "12/11/2023" -->
+                <label for="expirationDate">Fecha de vencimiento:</label>
+                <input type="date" id="expirationDate" name="expirationDate" value="2023-11-12">
+            </div>
+            <!-- Agrega espacio arriba del botón -->
+            <button type="submit">Crear nuevo</button>
+            <!-- Contenedor con bordes curvos para la lista de helados -->
+            <div class="field-container">
+                <!-- Agrega una lista desplegable con los helados registrados y fechas aleatorias dentro del rango -->
+                <label for="heladoRegistrado">Seleccionar helado:</label>
+                <select id="heladoRegistrado" name="heladoRegistrado" size="9">
+                    <option value="helado1">Helado Frutilla - $2100 - Fecha: 14/11/2023</option>
+                    <option value="helado2">Helado Strawberries - $3100 - Fecha: 16/11/2023</option>
+                    <option value="helado3">Palo Frutilla - $1400 - Fecha: 20/11/2023</option>
+                    <option value="helado4">Helado Chocolate - $2300 - Fecha: 25/11/2023</option>
+                    <option value="helado5">Helado de Vainilla - $2000 - Fecha: 02/12/2023</option>
+                    <option value="helado6">Helado de Menta - $2200 - Fecha: 05/12/2023</option>
+                    <option value="helado7">Helado de Limón - $1900 - Fecha: 08/12/2023</option>
+                    <option value="helado8">Helado de Cookies n Cream - $2500 - Fecha: 12/12/2023</option>
+                    <option value="helado9">Helado de Fresa - $1800 - Fecha: 15/12/2023</option>
+                </select>
+            </div>
+        </form>
+        <table id="inventoryTable">
+            <!-- Aquí se mostrará la tabla de inventario -->
+        </table>
+    </div>
+</body>
+</html>
+
